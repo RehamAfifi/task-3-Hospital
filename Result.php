@@ -4,29 +4,52 @@ session_start();
 
 if(!$_POST){
     header("location:Number.php");die;}
-
-
- 
-
+function test2($x){
+    $grade="";
+if($x=='bad'){
+    $x=0;}
+elseif(($x=='good')){
+        $x=10;
+    }
+elseif($x=='vgood'){
+        $x=30;
+    }
+else{
+        $x=50;
+    }
+    return $x;
+}
+    $grade= test2($_POST['cleanlines'])+test2($_POST['nursing'])+test2($_POST['prices'])+test2($_POST['doctor'])+test2($_POST['calmness']);
+    $message="";
+    $message1="";
+    if($grade>25){
+        $message="thank you for your review";
+        $message1="Good";
+    }
+    else{
+        $message="We will call you on the number ".$_SESSION['visitor_number'];
+        $message1="Bad";
+    }
 
 
  function test($variable){
+     $Res="";
     switch($variable)
     {
         case 'bad':
-            echo'bad';
+            $Res= 'bad';
             break;
             case 'good':
-                echo'good';
+                $Res='good';
                 break;
                 case 'vgood':
-                    echo'very good';
+                    $Res='very good';
                     break;
-                    case 'exellent':
-                        echo 'exellent';
+                    case 'excellent':
+                        $Res='excellent';
                         break;
     }
-  
+  return $Res;
 }
 
 
@@ -52,7 +75,7 @@ if(!$_POST){
     <div class="container">
         <div class="row offset-2">
             <div class="col-12 mt-5">
-                <h1 class="text-danger text-center">Hospital Servey </h1>
+                <h1 class="text-danger text-center">Hospital Review </h1>
 
             </div>
             <div class="offset-1 col-10">
@@ -71,14 +94,14 @@ if(!$_POST){
                                 <td>
                                     <?php
                               
-                               test($_POST['cleanlines'])
+                              echo(test($_POST['cleanlines']));
                                 ?></td>
 
                             </tr>
                             <tr>
                                 <td>Are you satisfied with the service prices?</td>
                                 <td> <?php
-                                   test($_POST['prices'])
+                                  echo (test($_POST['prices']));
                                  ?></td>
 
                             </tr>
@@ -87,7 +110,7 @@ if(!$_POST){
                                 <td>
 
                             <?php       
-                               test($_POST['nursing'])
+                               echo(test($_POST['nursing']));
                                ?>
 
                                 </td>
@@ -97,7 +120,7 @@ if(!$_POST){
                                 <td>
 
                             <?php       
-                               test($_POST['doctor'])
+                              echo(test($_POST['doctor']));
                                ?>
 
                                 </td>
@@ -106,19 +129,21 @@ if(!$_POST){
                                 <td>Are you satisfied with the calmness of the hospital?</td>
                                 <td>
                                 <?php       
-                               test($_POST['calmness'])
+                              echo (test($_POST['calmness']));
 
                                ?>
    
 
                                 </td>
                             </tr>
+                            <tr class="bg-danger font-weight-bold text-light">
+                        <td>Total==>></td>
+                       <td > <?php if(isset($message1)){echo$message1;}?></td>
+</tr>
+              
                         </tbody>
                     </table>
-                    <div class="form-group ">
-                        <h1 name="Result"  class="text-center bg-danger w-100 ">Result</h1>
-                    </div>
-                    <div class='alert alert-danger'> thank you we will call you on <?= $_SESSION['visitor_number']?></div>
+                    <div class='alert alert-danger'> <?php if (isset($message)){echo $message;} ?></div>
                 </form>
 
             </div>

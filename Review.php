@@ -4,7 +4,18 @@ $_SESSION['visitor_number']=$_POST['Number'];
 //  echo($_SESSION['visitor_number']);
  if(empty($_SESSION['visitor_number'])){
     header("location:Number.php");die;}
+    
+    // $_SESSION['grade1']=$_POST['cleanlines'];
+    // $_SESSION['grade2']=$_POST['prices'];
+    // $_SESSION['grade3']=$_POST['nursng'];
+    // $_SESSION['grade4']=$_POST['doctor'];
+    // $_SESSION['grade4']=$_POST['calmness'];
+    
+
+
 ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +35,7 @@ $_SESSION['visitor_number']=$_POST['Number'];
     <div class="container">
         <div class="row offset-2">
             <div class="col-12 mt-5">
-                <h1 class="text-danger text-center">Hospital Servey </h1>
+                <h1 class="text-danger text-center">Hospital Survey </h1>
 
             </div>
             <div class="offset-1 col-10">
@@ -36,7 +47,7 @@ $_SESSION['visitor_number']=$_POST['Number'];
                                 <th> Bad</th>
                                 <th>Good</th>
                                 <th>Very good</th>
-                                <th>Exellent</th>
+                                <th>Excellent</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,8 +55,8 @@ $_SESSION['visitor_number']=$_POST['Number'];
                                 <td>Are you satisfied with the level of cleanlines?</td>
                                 <td><input type="radio" id="cleanlines" name="cleanlines" value="bad"></td>
                                 <td><input type="radio" id="cleanlines" name="cleanlines" value="good"></td>
-                                <td><input type="radio" id="cleanlines" name="cleanlines" value="vgdood"></td>
-                                <td><input type="radio" id="cleanlines" name="cleanlines" value="exellent" class="mx-2">
+                                <td><input type="radio" id="cleanlines" name="cleanlines" value="vgood"></td>
+                                <td><input type="radio" id="cleanlines" name="cleanlines" value="excellent" class="mx-2">
                                 </td>
                             </tr>
                             <tr>
@@ -53,14 +64,14 @@ $_SESSION['visitor_number']=$_POST['Number'];
                                 <td><input type="radio" id="prices" name="prices" value="bad"></td>
                                 <td><input type="radio" id="prices" name="prices" value="good"></td>
                                 <td><input type="radio" id="prices" name="prices" value="vgood"></td>
-                                <td><input type="radio" id="prices" name="prices" value="exellent" class="mx-2"></td>
+                                <td><input type="radio" id="prices" name="prices" value="excellent" class="mx-2"></td>
                             </tr>
                             <tr>
                                 <td>Are you satisfied with the nursing sevice?</td>
                                 <td><input type="radio" id="nursing" name="nursing" value="bad"></td>
                                 <td><input type="radio" id="nursing" name="nursing" value="good"></td>
                                 <td><input type="radio" id="nursing" name="nursing" value="vgood"></td>
-                                <td><input type="radio" id="nursing" name="nursing" value="exellent" class="mx-2">
+                                <td><input type="radio" id="nursing" name="nursing" value="excellent" class="mx-2">
                                 </td>
                             </tr>
                             <tr>
@@ -68,14 +79,14 @@ $_SESSION['visitor_number']=$_POST['Number'];
                                 <td><input type="radio" id="doctor" name="doctor" value="bad"></td>
                                 <td><input type="radio" id="doctor" name="doctor" value="good"></td>
                                 <td><input type="radio" id="doctor" name="doctor" value="vgood"></td>
-                                <td><input type="radio" id="doctor" name="doctor" value="exellent" class="mx-2"></td>
+                                <td><input type="radio" id="doctor" name="doctor" value="excellent" class="mx-2"></td>
                             </tr>
                             <tr>
                                 <td>Are you satisfied with the calmness of the hospital?</td>
                                 <td><input type="radio" id="calmness" name="calmness" value="bad"></td>
                                 <td><input type="radio" id="calmness" name="calmness" value="good"></td>
                                 <td><input type="radio" id="calmness" name="calmness" value="vgood"></td>
-                                <td><input type="radio" id="calmness" name="calmness" value="exellent" class="mx-2">
+                                <td><input type="radio" id="calmness" name="calmness" value="excellent" class="mx-2">
                                 </td>
                             </tr>
                         </tbody>

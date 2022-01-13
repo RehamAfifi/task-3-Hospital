@@ -30,7 +30,7 @@ if(isset($_POST['Number'])){
             <div class="offset-3 col-6">
                 <form action="Review.php" method="post">
                     <div class="form-group row">
-                        <label for="Enter" class="">Enter your Number</label>
+                        <input  type="text" name="enter" class="form-control col-4 " placeholder="Enter your Number" readonly></input>
                         <input type="number" name="Number" id="Number" value="<?php if(isset($_POST['Number'])) {echo $_POST['Number'];} ?>"
                          class="form-control  mx-1 col-7" placeholder=""
                         aria-describedby="helpId">
@@ -38,7 +38,7 @@ if(isset($_POST['Number'])){
 
 
                     <div class="form-group ">
-                        <button name="servey" class="btn btn-danger rounded w-100">Servey</button>
+                        <button name="servey" class="btn btn-danger rounded w-100">Survey</button>
 
                     </div>
                 </form>
